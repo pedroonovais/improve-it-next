@@ -1,5 +1,4 @@
 "use client"
-import bannerAtendimento from "/bannerAtendimento.jpg"
 
 import { useRouter } from "next/navigation"
 import { useContext } from "react";
