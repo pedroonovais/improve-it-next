@@ -1,3 +1,5 @@
+"use client"
+import { FormProvider } from '@/contexts/FormContext/FormContext';
 import './globals.css'
 import { Sora } from 'next/font/google';
 
@@ -12,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className={sora.className}>
-      <body>{children}</body>
-    </html>
+    <FormProvider>
+      <html lang="pt-br" className={sora.className}>
+        <body>{children}</body>
+      </html>
+    </FormProvider>
   )
 }
