@@ -5,8 +5,6 @@ import { FormLayout } from "../../components/FormLayout/FormLayout"
 import { Hero } from "../../components/Hero/Hero"
 import { useRouter } from "next/navigation"
 
-import bannerAtendimento from "/bannerAtendimento.jpg"
-
 export default function Atendimento() {
     const router = useRouter()
 
@@ -21,7 +19,7 @@ export default function Atendimento() {
     }
 
     return (
-        <Hero strImg="bannerAtendimento.jpg" height="100vh">
+        <Hero strImg="/bannerAtendimento.jpg" height="100vh">
             <FormLayout>
                 <h2>Vou te fazer algumas perguntas para saber o que você deseja, ok?</h2>
                 <FlexRow>

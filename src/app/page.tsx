@@ -4,8 +4,8 @@ import { Section } from "../components/Section/Section";
 import Image from 'next/image'
 
 import bannerImage from "/bannerHome.jpg"
-import alinhamentoImage from "/alinhamento.jpg"
-import carrosImage from "/carros.jpg"
+import alinhamentoImage from "../../public/alinhamento.jpg"
+import carrosImage from "../../public/carros.jpg"
 import { Hero } from "../components/Hero/Hero";
 import { Footer } from "../components/Footer/Footer";
 import { ImageArea } from "../components/ImageArea/ImageArea";
@@ -30,10 +30,8 @@ export default function Home(){
                         <h1>Serviços Disponíveis:</h1>
                         <ImageArea>
                             <Image 
-                              src="/alinhamento.jpg"
+                              src={alinhamentoImage}
                               alt="Alinhamento" 
-                              width={80}
-                              height={80}
                             />
                         </ImageArea>
                         <p>Alinhamento de direção</p>
@@ -44,10 +42,8 @@ export default function Home(){
                         <h1>Por que escolher a CAP?</h1>
                         <ImageArea height="80%">
                             <Image 
-                              src="/carros.jpg"
+                              src={carrosImage}
                               alt="Carros" 
-                              width={80}
-                              height={80}
                             />
                         </ImageArea>
                         <p>
