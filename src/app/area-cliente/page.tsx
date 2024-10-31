@@ -15,7 +15,7 @@ export default function Admin(){
     return(<>
         <AdminLayout>
             <Sidebar>
-                <li>Atualizar informçoes</li>
+                <li>Atualizar informações</li>
                 <li>Gerenciar veiculos</li>
                 <li>Visualizar Orçamentos</li>
                 <li onClick={handleClickSair}>Sair</li>
