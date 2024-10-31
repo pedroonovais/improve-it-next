@@ -59,7 +59,7 @@ export default function Login () {
                     id="nome"
                     name="nome"
                     placeholder="Ex: João da Silva Martins"
-                    value={login}
+                    value={nome}
                     maxLength={16}
                     onChange={handleChange}
                 ></Input>
@@ -84,8 +84,28 @@ export default function Login () {
                     maxLength={16}
                     onChange={handleChange}
                 ></Input>
+                <h4>Senha *</h4>
+                <Input 
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    value={email}
+                    maxLength={16}
+                    onChange={handleChange}
+                ></Input>
+                <h4>Confirme sua Senha *</h4>
+                <Input 
+                    type="password"
+                    id="confirma-senha"
+                    name="confirma-senha"
+                    placeholder="Repita sua senha"
+                    value={email}
+                    maxLength={16}
+                    onChange={handleChange}
+                ></Input>
                 <FlexRow>
-                    <Button onClick={handleClick} >Entrar</Button>
+                    <Button onClick={handleClick} >Cadastrar</Button>
                 </FlexRow>
                 <Wrapper>
                     <Link href="/login/">Já tem cadastro? Login</Link>
