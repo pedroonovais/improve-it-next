@@ -7,8 +7,10 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledLogo = styled.div`
+    width: 250px;
+
     & img{
-        width: 100%;
+        width: 225px;
         height: 5rem;
     }
 `;
