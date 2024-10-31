@@ -26,5 +26,6 @@ export const StyledList = styled.ul`
     & li {
         padding: 10px 0;
         border-top: 1px solid white;
+        cursor: pointer;
     }
 `;

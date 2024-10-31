@@ -15,10 +15,10 @@ export default function Admin(){
     return(<>
         <AdminLayout>
             <Sidebar>
-                <li>Gerenciar Usuários</li>
-                <li>Gerenciar Oficinas</li>
+                <li>Atualizar informçoes</li>
+                <li>Gerenciar veiculos</li>
                 <li>Visualizar Orçamentos</li>
-                <li onClick={handleClickSair} >Sair</li>
+                <li onClick={handleClickSair}>Sair</li>
             </Sidebar>
         </AdminLayout>
     </>)

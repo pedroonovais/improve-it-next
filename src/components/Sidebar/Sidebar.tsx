@@ -1,4 +1,4 @@
-import { StyledList, StyledLogo, StyledSidebar } from "./SidebarAdmin.style"
+import { StyledList, StyledLogo, StyledSidebar } from "./Sidebar.style"
 import Image from "next/image"
 import logo from '../../assets/logo.png'
 import Link from "next/link"
@@ -7,7 +7,7 @@ interface SidebarAdminProps{
     children: React.ReactNode
 }
 
-export const SidebarAdmin = ({children}: SidebarAdminProps) => {
+export const Sidebar = ({children}: SidebarAdminProps) => {
     return <StyledSidebar>
         <StyledLogo className="img">
            <Link href="/">
