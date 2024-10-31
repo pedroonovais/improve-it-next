@@ -8,7 +8,7 @@ import { FormLayout } from "@/components/FormLayout/FormLayout";
 import { FlexRow } from "@/components/FlexRow/FlexRow";
 import { Button } from "@/components/Button/Button";
 
-export default function tipoServico() {
+export default function TipoServico() {
     const { formData, setFormData } = useContext(FormContext)
     const router = useRouter()
 
