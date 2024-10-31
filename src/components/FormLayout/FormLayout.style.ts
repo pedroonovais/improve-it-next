@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const StyledFormLayout = styled.form`
+export const StyledFormLayout = styled.form<{minWidth?: string;}>`
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     max-width: 768px;
     margin: 0 auto;
+    min-width: ${({minWidth}) => (minWidth ? minWidth : 'none')};
     
     & div{
         margin: 0.7rem 0;
