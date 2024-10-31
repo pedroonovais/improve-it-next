@@ -1,3 +1,4 @@
+"use client"
 import { StyledCard } from "./Card.style"
 
 interface CardProps{

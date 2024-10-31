@@ -1,3 +1,4 @@
+"use client"
 import { StyledWrapperCheckbox } from "./WrapperCheckbox.style"
 
 interface WrapperCheckboxProps{

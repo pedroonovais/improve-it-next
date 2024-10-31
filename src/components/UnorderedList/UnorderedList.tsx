@@ -1,3 +1,4 @@
+"use client"
 import { StyledUnorderedList } from "./UnorderedList.style"
 
 interface UnorderedListProps{

@@ -1,3 +1,4 @@
+"use client"
 import { StyledList, StyledLogo, StyledSidebar } from "./Sidebar.style"
 import Image from "next/image"
 import logo from '../../assets/logo.png'

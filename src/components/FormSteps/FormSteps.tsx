@@ -1,3 +1,4 @@
+"use client"
 interface FormStepsProps {
     index: number
 }

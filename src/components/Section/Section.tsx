@@ -1,3 +1,4 @@
+"use client"
 import { StyledSection } from "./Section.style"
 
 interface SectionProps{

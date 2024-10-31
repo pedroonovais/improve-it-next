@@ -1,3 +1,4 @@
+"use client"
 import { StyledFlexRow } from "./FlexRow.style"
 
 interface FlexRowProps{

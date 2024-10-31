@@ -1,3 +1,4 @@
+"use client"
 import { StyledInput } from "./Input.style"
 
 interface InputProps {

@@ -1,3 +1,4 @@
+"use client"
 import { StyledCheckbox, StyledLabel } from "./Checkbox.style"
 
 interface CheckboxProps {

@@ -1,3 +1,4 @@
+"use client"
 import { StyledButton } from "./Button.style"
 
 interface ButtonProps{

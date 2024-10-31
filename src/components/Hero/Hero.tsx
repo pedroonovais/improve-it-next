@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { Button } from "../Button/Button"
 import { Menu } from "../Menu/Menu"

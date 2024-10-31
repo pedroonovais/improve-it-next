@@ -1,5 +1,4 @@
 "use client"
-
 import { AdminLayout } from "@/components/AdminLayout/AdminLayout"
 import { Sidebar } from "@/components/Sidebar/Sidebar"
 import Link from "next/link"

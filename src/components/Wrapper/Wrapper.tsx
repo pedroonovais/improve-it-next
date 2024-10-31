@@ -1,3 +1,4 @@
+"use client"
 import { StyledWrapper } from "./Wrapper.style"
 
 interface WrapperProps{

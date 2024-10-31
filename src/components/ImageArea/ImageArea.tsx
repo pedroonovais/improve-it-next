@@ -1,3 +1,4 @@
+"use client"
 import { StyledImageArea } from "./ImageArea.style"
 
 interface ImageAreaProps{

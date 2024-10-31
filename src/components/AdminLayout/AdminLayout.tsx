@@ -1,3 +1,4 @@
+"use client"
 import { StyledLayout } from "./AdminLayout.style"
 
 interface AdminLayoutProps{

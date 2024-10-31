@@ -1,5 +1,4 @@
 "use client";
-
 import { Hero } from "@/components/Hero/Hero";
 import { FormLayout } from "@/components/FormLayout/FormLayout";
 import { FlexRow } from "@/components/FlexRow/FlexRow";

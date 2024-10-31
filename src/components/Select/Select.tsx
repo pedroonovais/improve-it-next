@@ -1,3 +1,4 @@
+"use client"
 import { StyledSelect } from "./Select.style"
 
 interface SelectProps{

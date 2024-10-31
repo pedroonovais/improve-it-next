@@ -1,3 +1,4 @@
+"use client"
 import { StyledFormLayout } from "./FormLayout.style";
 
 interface FormLayoutProps {

@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 import logo from '../../assets/logo.png'
 import { StyledHamburger, StyledNav, StyledLogo, StyledNavegation } from './Menu.style'

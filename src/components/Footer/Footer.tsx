@@ -1,3 +1,4 @@
+"use client"
 import { StyledFooter, StyledGroupLinks } from "./Footer.style"
 
 import footerLogo from "../../assets/logoImproveIt.png";
