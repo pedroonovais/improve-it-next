@@ -7,6 +7,8 @@ import { useContext, useEffect, useState } from "react";
 import { FormContext } from "@/contexts/FormContext/FormContext";
 import { Input } from "@/components/Input/Input";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
 
 export default function Cep () {
     const { formData, setFormData } = useContext(FormContext)
@@ -56,6 +58,9 @@ export default function Cep () {
                 <FlexRow>
                     <Button onClick={handleClick} >Entrar</Button>
                 </FlexRow>
+                <Wrapper>
+                    <Link href="/cadastro/">Criar conta</Link>
+                </Wrapper>
             </FormLayout>
         </Hero>
     )
