@@ -4,21 +4,60 @@ import { FormLayout } from "@/components/FormLayout/FormLayout";
 import { FlexRow } from "@/components/FlexRow/FlexRow";
 import { Button } from "@/components/Button/Button";
 import { useContext, useEffect, useState } from "react";
-import { FormContext } from "@/contexts/FormContext/FormContext";
 import { Input } from "@/components/Input/Input";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Wrapper } from "@/components/Wrapper/Wrapper";
+import LoginContext from "@/contexts/LoginContext/LoginContext";
 
 export default function Login () {
-    const { formData, setFormData } = useContext(FormContext)
+    const loginContext = useContext(LoginContext)
     const router = useRouter()
     const [login, setLogin] = useState('')
     const [senha, setSenha] = useState('')
+
+    if (!loginContext) {
+        throw new Error("LoginContext not provided");
+    }
+
+    const { setId } = loginContext
+
+    const handleSendLogin = async (params: object) => {
+        try{
+            console.log(params);
+            const response = await fetch("http://localhost:8080/usuario/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                },
+                body: JSON.stringify(params),
+            })
+
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+        
+            if (data){
+                sessionStorage.setItem("userToken", JSON.stringify(data));
+                setId(data.id)
+                router.push("/area-cliente")
+            }
+        }catch (error) {
+            console.log("error:", error)
+        }
+    }
     
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        
         event.preventDefault()
-        console.log("Login: ", login, " Senha: ", senha)   
+        const params = {
+            login: login,
+            senha: senha
+        }
+
+        handleSendLogin(params)
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
