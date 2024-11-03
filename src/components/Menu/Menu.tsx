@@ -2,15 +2,31 @@
 import Link from 'next/link'
 import logo from '../../assets/logo.png'
 import { StyledHamburger, StyledNav, StyledLogo, StyledNavegation } from './Menu.style'
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
+import LoginContext from '@/contexts/LoginContext/LoginContext'
 
 export const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const login = useContext(LoginContext);
+    const [txtLink, setTxtLink] = useState("")
+    const [caminhoLink, setCaminhoLink] = useState("")
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     }
+
+    useEffect(() => {
+        const sessionData = sessionStorage.getItem("userToken");
+
+        if (!sessionData) {
+            setCaminhoLink("/login")
+            setTxtLink("Login")
+        }else{
+            setCaminhoLink("/area-cliente")
+            setTxtLink("Área do Cliente")
+        }
+    }, [login]);
 
     return (
         <StyledNav>
@@ -29,6 +45,7 @@ export const Menu = () => {
             <StyledNavegation isOpen={isOpen}>
                 <li><Link href="/integrantes">Integrantes</Link></li>
                 <li><Link href="/atendimento">Iniciar Atendimento</Link></li>
+                <li><Link href={caminhoLink}>{txtLink}</Link></li>
             </StyledNavegation>
         </StyledNav>
     )

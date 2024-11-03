@@ -10,6 +10,10 @@ export const StyledCard = styled.div`
     max-width: 500px;    
     margin-bottom: 1rem;
     text-align: left;
+
+    & form{
+        display: block !important;
+    }
     
     & h4{
         margin-bottom: 10px;

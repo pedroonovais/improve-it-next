@@ -21,7 +21,6 @@ export default function Login () {
 
     const handleSendLogin = async (params: object) => {
         try {
-            console.log(params);
             const response = await fetch("http://localhost:8080/usuario/login", {
                 method: "POST",
                 headers: {
