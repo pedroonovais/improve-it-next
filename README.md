@@ -1,6 +1,6 @@
 # Link do vídeo de apresentação
 
-https://youtu.be/3ElBMvq9Q-M
+https://youtu.be/t6CDAhe8IFY
 
 ## Participantes
 
