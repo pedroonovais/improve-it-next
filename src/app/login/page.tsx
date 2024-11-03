@@ -3,27 +3,24 @@ import { Hero } from "@/components/Hero/Hero";
 import { FormLayout } from "@/components/FormLayout/FormLayout";
 import { FlexRow } from "@/components/FlexRow/FlexRow";
 import { Button } from "@/components/Button/Button";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Input } from "@/components/Input/Input";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Wrapper } from "@/components/Wrapper/Wrapper";
+
 import LoginContext from "@/contexts/LoginContext/LoginContext";
 
 export default function Login () {
-    const loginContext = useContext(LoginContext)
-    const router = useRouter()
-    const [login, setLogin] = useState('')
-    const [senha, setSenha] = useState('')
+    const loginContext = useContext(LoginContext);
+    const router = useRouter();
+    const [login, setLogin] = useState('');
+    const [senha, setSenha] = useState('');
 
-    if (!loginContext) {
-        throw new Error("LoginContext not provided");
-    }
-
-    const { setId } = loginContext
+    const setId = loginContext?.setId;
 
     const handleSendLogin = async (params: object) => {
-        try{
+        try {
             console.log(params);
             const response = await fetch("http://localhost:8080/usuario/login", {
                 method: "POST",
@@ -31,42 +28,43 @@ export default function Login () {
                     "Content-Type": "application/json; charset=UTF-8",
                 },
                 body: JSON.stringify(params),
-            })
+            });
 
             if (!response.ok) {
                 throw new Error(`Erro na requisição: ${response.statusText}`);
             }
 
             const data = await response.json();
-        
-            if (data){
+
+            if (data) {
                 sessionStorage.setItem("userToken", JSON.stringify(data));
-                setId(data.id)
-                router.push("/area-cliente")
+                if (setId) {
+                    setId(data.id);
+                }
+                router.push("/area-cliente");
             }
-        }catch (error) {
-            console.log("error:", error)
+        } catch (error) {
+            console.log("error:", error);
         }
-    }
+    };
     
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        
-        event.preventDefault()
+        event.preventDefault();
         const params = {
             login: login,
             senha: senha
-        }
+        };
 
-        handleSendLogin(params)
-    }
+        handleSendLogin(params);
+    };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.id === "login"){
-            setLogin(event.target.value)
-        }else{
-            setSenha(event.target.value)
+        if (event.target.id === "login") {
+            setLogin(event.target.value);
+        } else {
+            setSenha(event.target.value);
         }
-    }
+    };
     
     return (
         <Hero strImg="/bannerAtendimento.jpg" height="100vh">
@@ -80,7 +78,7 @@ export default function Login () {
                     value={login}
                     maxLength={16}
                     onChange={handleChange}
-                ></Input>
+                />
                 <Input 
                     type="password"
                     id="senha"
@@ -89,14 +87,14 @@ export default function Login () {
                     value={senha}
                     maxLength={16}
                     onChange={handleChange}
-                ></Input>
+                />
                 <FlexRow>
-                    <Button onClick={handleClick} >Entrar</Button>
+                    <Button onClick={handleClick}>Entrar</Button>
                 </FlexRow>
                 <Wrapper>
                     <Link href="/cadastro/">Criar conta</Link>
                 </Wrapper>
             </FormLayout>
         </Hero>
-    )
+    );
 }

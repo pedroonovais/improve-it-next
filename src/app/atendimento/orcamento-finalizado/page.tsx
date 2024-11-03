@@ -6,12 +6,15 @@ import { Button } from "@/components/Button/Button";
 import { ImageArea } from "@/components/ImageArea/ImageArea";
 import { useContext } from "react";
 import { FormContext } from "@/contexts/FormContext/FormContext";
+import { useRouter } from "next/navigation";
 
 export default function ConfirmBudget() {
     const { formData } = useContext(FormContext)
+    const router = useRouter()
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
+        router.push('/cadastro')
     }
     
     return (
@@ -34,7 +37,7 @@ export default function ConfirmBudget() {
                     <strong>Telefone: </strong> (11) 2774-1507
                 </p>
                 <FlexRow>
-                    <Button onClick={handleClick}>Salvar via email</Button>
+                    <Button onClick={handleClick}>Finalizar cadastro</Button>
                 </FlexRow>
             </FormLayout>
         </Hero>
