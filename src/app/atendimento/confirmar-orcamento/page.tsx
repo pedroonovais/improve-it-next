@@ -9,7 +9,7 @@ import { UnorderedList } from "@/components/UnorderedList/UnorderedList";
 import { useRouter } from "next/navigation";
 
 export default function ConfirmBudget() {
-    const { formData } = useContext(FormContext)
+    const { formData, setFormData } = useContext(FormContext)
     const router = useRouter()
     
     const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -25,28 +25,39 @@ export default function ConfirmBudget() {
     const calculaPreco = () => {
         if (formData.tipoServico === "revisao"){
             if (formData.kmRodados === "Até 50 mil Km"){
+                setFormData({ ...formData, preco: "800" });
                 return "800,00"
             }else if (formData.kmRodados === "Até 80 mil Km" || formData.kmRodados === "Até 100 mil Km"){
+                setFormData({ ...formData, preco: "1000" });
                 return "1.000,00"
             }else if (formData.kmRodados === "Até 150 mil Km" || formData.kmRodados === "Até 200 mil Km"){
+                setFormData({ ...formData, preco: "1250" });
                 return "1.250,00"
             }else if (formData.kmRodados === "Até 250 mil Km" || formData.kmRodados === "Até 300 mil Km"){
+                setFormData({ ...formData, preco: "1500" });
                 return "1.500,00"
             }else{
+                setFormData({ ...formData, preco: "1750" });
                 return "1.750,00"
             }
         }else if ((formData.tipoServico === "manutencao")){
+            setFormData({ ...formData, preco: "1150" });
             return "1.150,00"
         }else{
             if (formData.kmRodados === "Até 50 mil Km"){
+                setFormData({ ...formData, preco: "1950" });
                 return "1.950,00"
             }else if (formData.kmRodados === "Até 80 mil Km" || formData.kmRodados === "Até 100 mil Km"){
+                setFormData({ ...formData, preco: "2150" });
                 return "2.150,00"
             }else if (formData.kmRodados === "Até 150 mil Km" || formData.kmRodados === "Até 200 mil Km"){
+                setFormData({ ...formData, preco: "2400" });
                 return "2.400,00"
             }else if (formData.kmRodados === "Até 250 mil Km" || formData.kmRodados === "Até 300 mil Km"){
+                setFormData({ ...formData, preco: "2650" });
                 return "2.650,00"
             }else{
+                setFormData({ ...formData, preco: "2900" });
                 return "2.900,00"
             }
         }

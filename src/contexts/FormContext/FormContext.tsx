@@ -5,14 +5,15 @@ interface FormData {
     servicosSelecionados: string[];
     seguradoPorto: boolean | null;
     marcaVeiculo: string;
-    anoFabricacao: number | null;
-    anoModelo: number | null;
+    anoFabricacao: string;
+    anoModelo: string;
     modelo: string;
     cep: string;
     logradouro: string;
     kmRodados: string;
     problemaDiagnotisco: string;
     descProblemaDiagnostico: string;
+    preco: String;
 }
 
 interface FormContextProps {
@@ -29,14 +30,15 @@ const defaultFormData: FormData = {
     servicosSelecionados: [],
     seguradoPorto: null,
     marcaVeiculo: "",
-    anoFabricacao: null,
-    anoModelo: null,
+    anoFabricacao: "",
+    anoModelo: "",
     modelo: "",
     cep: "",
     logradouro: "",
     kmRodados: "",
     problemaDiagnotisco: "",
     descProblemaDiagnostico: "",
+    preco: "",
 };
 
 const defaultContextValue: FormContextProps = {

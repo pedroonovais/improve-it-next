@@ -47,10 +47,10 @@ export default function VehicleData() {
                 setSelecionouCampoMarca(true);
                 break;
             case "ano-fabricacao":
-                setFormData({ ...formData, anoFabricacao: Number(event.target.value) });
+                setFormData({ ...formData, anoFabricacao: String(event.target.value).split(" ")[0] });
                 break;
             case "ano-modelo":
-                setFormData({ ...formData, anoModelo: Number(event.target.value) });
+                setFormData({ ...formData, anoModelo: String(event.target.value).split(" ")[0] });
                 break;
             case "modelo":
                 const value = event.target.value;
