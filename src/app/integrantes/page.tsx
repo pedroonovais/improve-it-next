@@ -28,7 +28,7 @@ export default function Members() {
             href="https://github.com/pedroonovais/improve-it-next"
             target="_blank"
           >
-            https://github.com/pedroonovais/web-improve-it
+            https://github.com/pedroonovais/improve-it-next
           </a>
         </p>
         <Wrapper>
