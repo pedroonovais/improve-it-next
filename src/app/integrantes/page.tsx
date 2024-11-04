@@ -25,7 +25,7 @@ export default function Members() {
         <p>Link para o nosso repositório no github:</p>
         <p>
           <a
-            href="https://github.com/pedroonovais/web-improve-it"
+            href="https://github.com/pedroonovais/improve-it-next"
             target="_blank"
           >
             https://github.com/pedroonovais/web-improve-it
